@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiar Sawla Fitriansyah | Portofolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">TSF</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#interests">Minat</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Tiar Sawla Fitriansyah</h1>
+            <p class="subtitle">Mahasiswa Informatika Tingkat 2</p>
+            <p class="description">
+                Seorang pembelajar yang antusias dalam dunia teknologi, dengan fokus pada pengembangan perangkat lunak, 
+                Internet of Things, dan keamanan jaringan. Selalu mencari cara baru untuk menerapkan pengetahuan 
+                dalam proyek-proyek yang bermakna.
+            </p>
+            <a href="#contact" class="cta-button">Hubungi Saya</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Tentang Saya</h2>
+            <p class="section-subtitle fade-in">Perjalanan di Dunia Informatika</p>
+            <div class="about-content fade-in">
+                <p>
+                    Halo! Saya Tiar Sawla Fitriansyah, mahasiswa tingkat 2 jurusan Informatika yang memiliki 
+                    Perjalanan saya di 
+                    dunia pemrograman dimulai dengan ketertarikan pada bagaimana teknologi dapat menyelesaikan 
+                    masalah nyata dalam kehidupan sehari-hari.
+                </p>
+                <p>
+                    Saat ini, saya sedang mendalami berbagai aspek pemrograman dan teknologi, mulai dari 
+                    pengembangan aplikasi menggunakan Python, eksplorasi dunia Internet of Things (IoT), 
+                    hingga mempelajari dasar-dasar keamanan jaringan. Setiap hari adalah kesempatan baru 
+                    untuk belajar dan berkembang.
+                </p>
+                <p>
+                    Sebagai mahasiswa yang masih dalam tahap pembelajaran, saya percaya bahwa fondasi yang 
+                    kuat dan rasa ingin tahu yang tinggi adalah kunci untuk menjadi profesional yang 
+                    kompeten di masa depan. Saya selalu terbuka untuk kolaborasi, berbagi pengetahuan, 
+                    dan belajar dari sesama.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="interests">
+        <div class="section-container">
+            <h2 class="section-title fade-in">Bidang Minat</h2>
+            <p class="section-subtitle fade-in">Area yang Saya Eksplorasi</p>
+            <div class="interest-grid">
+                <div class="interest-card fade-in">
+                    <span class="interest-icon">🐍</span>
+                    <h3>Pemrograman Python</h3>
+                    <p>
+                        Mengeksplorasi berbagai aspek Python, scripting sederhana dan semacamnya. Python adalah bahasa yang powerful dan versatile untuk 
+                        berbagai kebutuhan development.
+                    </p>
+                </div>
+                <div class="interest-card fade-in">
+                    <span class="interest-icon">🔌</span>
+                    <h3>Pembuatan Produk IoT</h3>
+                    <p>
+                        Tertarik untuk menghubungkan dunia fisik dengan digital melalui Internet of Things. 
+                        Belajar merancang dan mengembangkan perangkat pintar yang dapat berkomunikasi dan 
+                        memberikan solusi praktis.
+                    </p>
+                </div>
+                <div class="interest-card fade-in">
+                    <span class="interest-icon">🔒</span>
+                    <h3>Keamanan Jaringan</h3>
+                    <p>
+                        Saya masih baru memulai mempelajari konsep-konsep dasar keamanan jaringan dan bagaimana melindungi 
+                        sistem dari berbagai ancaman. Memahami pentingnya security dalam setiap aspek 
+                        teknologi informasi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <h2 class="section-title">Mari Terhubung</h2>
+            <p class="section-subtitle">
+                Saya terbuka untuk diskusi, kolaborasi, atau sekadar berbagi pengetahuan seputar teknologi
+            </p>
+            <div class="contact-info">
+                <p>Hubungi saya melalui email atau media sosial</p>
+                <p><a href="mailto:trtiar28@gmail.com">trtiar28@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Tiar Sawla Fitriansyah.</p>
+    </footer>
+
+    <script>
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu toggle (basic implementation)
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
