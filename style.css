@@ -437,6 +437,9 @@
         @media (max-width: 1024px) {
             .hero {
                 background-attachment: scroll !important;
+                /* Gunakan gambar berbeda untuk mobile - ganti 'hero-bg-mobile.jpg' dengan nama file Anda */
+                background-image: linear-gradient(135deg, rgba(26, 26, 46, 0.7) 0%, rgba(15, 52, 96, 0.7) 100%), 
+                                  url('image/hero-bg-mobile.jpg') !important;
             }
         }
 
