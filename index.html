@@ -10,16 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Buda:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="style.css" rel="stylesheet">
-    <style>
-        
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">TSF</div>
+            <div class="logo">Yarsa Page</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">Tentang</a></li>
@@ -58,9 +56,11 @@
                 </p>
                 <p>
                     Saat ini, saya sedang mendalami berbagai aspek pemrograman dan teknologi, mulai dari 
-                    pengembangan aplikasi menggunakan Python, eksplorasi dunia Internet of Things (IoT), 
-                    hingga mempelajari dasar-dasar keamanan jaringan. Setiap hari adalah kesempatan baru 
-                    untuk belajar dan berkembang.
+                    pemrograman dalam bahasa Python, Eksplorasi Internet of Things (IoT), 
+                    hingga mempelajari dasar-dasar keamanan jaringan, di sela-sela mendalami bidang IT, 
+                    saya juga memiliki kegiatan sampingan yang saya sukai, yaitu bidang multimedia, 
+                    mulai dari pengeditan dasar seperti poster atau feeds Instagram hingga pengeditan video 
+                    untuk keperluan pribadi.
                 </p>
                 <p>
                     Sebagai mahasiswa yang masih dalam tahap pembelajaran, saya percaya bahwa fondasi yang 
@@ -104,6 +104,15 @@
                         teknologi informasi.
                     </p>
                 </div>
+                <div class="interest-card fade-in">
+                    <img src="multimedia.png" alt="multimedia" class="interest-icon">
+                    <h3>Multimedia & Konten Kreatif</h3>
+                    <p>
+                        Mengeksplorasi dunia multimedia melalui fotografi dan perekaman audio-video. 
+                        Tertarik untuk menangkap momen dan menciptakan konten visual yang menarik, 
+                        serta mempelajari teknik produksi multimedia yang berkualitas.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -113,11 +122,21 @@
         <div class="section-container">
             <h2 class="section-title">Mari Terhubung</h2>
             <p class="section-subtitle">
-                Saya terbuka untuk diskusi, kolaborasi, atau sekadar berbagi pengetahuan seputar teknologi
+                Saya terbuka untuk diskusi, kolaborasi, atau sekadar berbagi pengetahuan seputar Teknologi dan Multimedia.
             </p>
             <div class="contact-info">
                 <p>Hubungi saya melalui email atau media sosial</p>
-                <p><a href="mailto:trtiar28@gmail.com">trtiar28@gmail.com</a></p>
+                <div class="social-icons">
+                    <a href="mailto:trtiar28@gmail.com" class="social-icon" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/628813019580" target="_blank" class="social-icon" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://instagram.com/tiarsf_" target="_blank" class="social-icon" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -166,10 +185,15 @@
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // Navbar scroll effect
+        // Navbar scroll effect - berubah saat menyentuh section "about"
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
+            const aboutSection = document.querySelector('#about');
+            const aboutTop = aboutSection.offsetTop;
+            const navHeight = nav.offsetHeight;
+            
+            // Navbar akan berubah ketika bagian bawah navbar menyentuh bagian atas section "about"
+            if (window.scrollY + navHeight >= aboutTop) {
                 nav.classList.add('scrolled');
             } else {
                 nav.classList.remove('scrolled');
